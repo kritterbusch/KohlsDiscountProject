@@ -6,8 +6,7 @@ package kohlsdiscountproject;
  */
 public class CashRegister {
 
-KohlsDatabase db;
-    
+    private KohlsDatabase db;
     private CustomerInformation custInfo;
     private SalesRecord sales;
 
@@ -15,7 +14,7 @@ KohlsDatabase db;
         db = new KohlsDatabase();
         custInfo = db.locateCustomerInDB(custNum);
         sales = new SalesRecord(custInfo);
-        
+
     }
 
     public final void itemScan(final String prodID, int quantity) {
@@ -31,6 +30,5 @@ KohlsDatabase db;
     public final void endSale() {
         sales.print();
     }
-    
 
 }

@@ -1,7 +1,7 @@
 package kohlsdiscountproject;
 
 /**
- * Database of available products
+ * Database of available products and known customers
  *
  * @author kritterbusch
  */

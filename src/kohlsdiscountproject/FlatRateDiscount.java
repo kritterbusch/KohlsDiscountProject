@@ -1,15 +1,13 @@
-
 package kohlsdiscountproject;
 
 /**
  *
  * @author kritterbusch
  */
-public class FlatRateDiscount implements ProductDiscountStrategy{
+public class FlatRateDiscount implements ProductDiscountStrategy {
+
     private double discount;
-    
-  
-    
+
     public FlatRateDiscount(double d) {
         this.discount = d;
     }

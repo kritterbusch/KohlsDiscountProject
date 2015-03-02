@@ -1,4 +1,3 @@
-
 package kohlsdiscountproject;
 
 /**
@@ -6,9 +5,9 @@ package kohlsdiscountproject;
  * @author KRitterbusch
  */
 public class CustomerInformation {
+
     private String custNum;
     private String custName;
-    
 
     public CustomerInformation(String custNum, String custName) {
         this.custNum = custNum;
@@ -30,6 +29,5 @@ public class CustomerInformation {
     public void setCustName(String custName) {
         this.custName = custName;
     }
-    
-    
+
 }
