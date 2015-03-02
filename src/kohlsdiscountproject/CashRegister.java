@@ -21,7 +21,7 @@ KohlsDatabase db;
     public final void itemScan(final String prodID, int quantity) {
         if (prodID == null || prodID.length() == 0 || quantity < 1) {
 
-            System.out.println("NEIN!!");
+            System.out.println("Invalid Product Entry");
 
         } else {
             sales.addProduct(db.locateProductInDB(prodID));
