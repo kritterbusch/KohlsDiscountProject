@@ -1,11 +1,13 @@
 package kohlsdiscountproject;
 
 /**
- * Database of available products and known customers
+ * DatabaseStrategy of available products and known customers
  *
  * @author kritterbusch
  */
-public class KohlsDatabase {
+public class KohlsDatabase implements DatabaseStrategy {
+    private static final String ERROR_CUSTOMER = "No such customer exists.";
+    private static final String ERROR_PRODUCT = "No such product exists.";
 
     private final ProductInformation[] product = {
         new ProductInformation("MS KNIT TOPS   ", "20095", 30.00, new PercentOffDiscount(0.6)),
@@ -26,11 +28,12 @@ public class KohlsDatabase {
         new CustomerInformation("436", "Lauren Reemsnyder")
     };
 
-    public final CustomerInformation locateCustomerInDB(final String custNum) {
+    @Override
+    public final CustomerInformation locateCustomerInDB(final String custNum) throws IllegalArgumentException{
 
         if (custNum == null || custNum.length() == 0) {
-            System.out.println("There is no such customer.");
-            return null;
+           throw new IllegalArgumentException(ERROR_CUSTOMER);
+            
         }
 
         CustomerInformation theCustomer = null;
@@ -39,17 +42,19 @@ public class KohlsDatabase {
             if (custNum.equals(thisCustomer.getCustNum())) {
                 theCustomer = thisCustomer;
                 break;
+                
             }
         }
 
         return theCustomer;
     }
 
-    public final ProductInformation locateProductInDB(final String prodID) {
+    @Override
+    public final ProductInformation locateProductInDB(final String prodID) throws IllegalArgumentException {
 
         if (prodID == null || prodID.length() == 0) {
-            System.out.println("No such product exists.");
-            return null;
+            throw new IllegalArgumentException(ERROR_PRODUCT);
+            
         }
 
         ProductInformation theProduct = null;

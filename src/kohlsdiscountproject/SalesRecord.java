@@ -14,7 +14,7 @@ public class SalesRecord {
     private final CustomerInformation customer;
     private ProductInformation[] product;
     private static final double salesTax = .051;
-
+    
     public SalesRecord(CustomerInformation customer) {
         this.customer = customer;
         this.product = new ProductInformation[0];
